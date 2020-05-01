@@ -5,8 +5,8 @@
       <p class="mr-2">Enquire</p>
     </div>
     <div class="container text-center">
-      <img src="../assets/name.jpeg" alt />
-      <!-- <img src="../assets/role.jpeg" alt /> -->
+      <img class="name" src="../assets/name.jpeg" />
+      <img class="role" src="../assets/role.jpeg" />
     </div>
   </div>
 </template>
@@ -21,8 +21,14 @@ export default {
 <style scoped lang="scss">
 .home {
   img {
-    // display: block;
-    height: 260px;
+    display: block;
+    margin: 0 auto;
+    &.name {
+      height: 90px;
+    }
+    &.role {
+      height: 50px;
+    }
   }
   padding: 30px;
   background-color: #e0ebe8;
