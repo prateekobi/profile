@@ -5,19 +5,33 @@
 </template>
 
 <style lang="scss">
-.jump {
-  animation: jump 1s linear infinite;
-  position: absolute;
-  left: 50%;
+.chevron {
+  font-size: 40px;
+  margin-top: 15px;
 }
 
-@keyframes jump {
-  0%,
-  100% {
-    bottom: 0;
+.jump {
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+.jump {
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
   }
-  50% {
-    bottom: 20px;
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
   }
 }
 </style>

@@ -68,9 +68,5 @@ export default {
       color: #6eb2c1;
     }
   }
-  .chevron {
-    font-size: 40px;
-    margin-top: 15px;
-  }
 }
 </style>
