@@ -6,6 +6,8 @@ import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 // Import the styles directly. (Or you could add them via script tags.)
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 Vue.use(BootstrapVue);
 
