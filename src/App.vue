@@ -5,11 +5,19 @@
 </template>
 
 <style lang="scss">
-#app {
-  background-color: #e0ebe8;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+.jump {
+  animation: jump 1s linear infinite;
+  position: absolute;
+  left: 50%;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
 }
 </style>

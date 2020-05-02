@@ -16,6 +16,9 @@
         </a>
       </div>
       <img class="harbour" src="../assets/harbour.png" alt />
+      <div class="chevron jump">
+        <i class="fas fa-chevron-down"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +67,10 @@ export default {
       padding: 24px;
       color: #6eb2c1;
     }
+  }
+  .chevron {
+    font-size: 40px;
+    margin-top: 15px;
   }
 }
 </style>
