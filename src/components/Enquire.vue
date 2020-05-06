@@ -48,17 +48,12 @@ export default {
   name: "enquire",
   methods: {
     sendEmail(e) {
-      // let params = {
-      //   name: "hello",
-      //   email: "email@email.com",
-      //   message: "Message"
-      // };
       emailjs
         .sendForm(
-          "6079",
-          "template_cJ9DgMU9",
+          process.env.VUE_APP_EMAIL_USER_ID,
+          process.env.VUE_APP_TEMPLATE_ID,
           e.target,
-          "user_Ei1CA3QOgxcFGaZCxCE1M"
+          process.env.VUE_APP_EMAIL_USER_TOKEN
         )
         .then(result => {
           console.log("SUCCESS", result);
@@ -67,6 +62,9 @@ export default {
           console.log("ERROR", error);
         });
     }
+  },
+  mounted() {
+    console.log("TEST", process.env.VUE_APP_TEST);
   }
 };
 </script>
