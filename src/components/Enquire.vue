@@ -12,7 +12,8 @@
               type="text"
               class="name form-control text-center"
               placeholder="name"
-              name="user_name"
+              name="from_name"
+              required
             />
           </div>
           <div class="form-group">
@@ -20,7 +21,8 @@
               type="email"
               class="name form-control text-center"
               placeholder="email"
-              name="user_email"
+              name="from_email"
+              required
             />
           </div>
           <div class="form-group">
@@ -28,7 +30,8 @@
               class="form-control text-center"
               placeholder="Comment"
               rows="9"
-              name="message"
+              name="message_html"
+              required
             ></textarea>
           </div>
           <button type="submit">Submit</button>
@@ -99,13 +102,25 @@ export default {
       }
     }
     button {
-      background-color: #70b4c2;
+      margin-top: 25px;
+      width: 140px;
+      height: 45px;
+      font-size: 15px;
+      letter-spacing: 2.5px;
+      font-weight: 500;
+      color: #000;
+      background-color: #fff;
       border: none;
-      color: #fff;
-      font-size: 30px;
-      border-radius: 50px;
-      width: 250px;
-      padding: 10px;
+      border-radius: 45px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+      &:hover {
+        background-color: #6eb4c7;
+        box-shadow: 0px 15px 20px rgba(110, 180, 199, 0.4);
+        color: #fff;
+        cursor: pointer;
+        transform: translateY(-7px);
+      }
     }
   }
 }
