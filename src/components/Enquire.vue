@@ -6,7 +6,7 @@
       </div>
       <p class="title text-center">Enquire</p>
       <div class="form text-center">
-        <form action="submit" @submit.prevent="sendEmail">
+        <form v-if="!enquirySent" action="submit" @submit.prevent="sendEmail">
           <div class="form-group">
             <input
               type="text"
@@ -36,6 +36,10 @@
           </div>
           <button type="submit">Submit</button>
         </form>
+        <div v-if="enquirySent">
+          <h1 class="jump">Submitted!</h1>
+          <p>I'll get back to you shortly.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -46,6 +50,11 @@ import emailjs from "emailjs-com";
 
 export default {
   name: "enquire",
+  data() {
+    return {
+      enquirySent: false
+    };
+  },
   methods: {
     sendEmail(e) {
       emailjs
@@ -55,16 +64,18 @@ export default {
           e.target,
           process.env.VUE_APP_EMAIL_USER_TOKEN
         )
-        .then(result => {
-          console.log("SUCCESS", result);
+        .then(() => {
+          this.enquirySent = true;
+          this.$toast.success(
+            "Thank you for your enquiry, i'll get back to you as soon as I can!"
+          );
         })
-        .catch(error => {
-          console.log("ERROR", error);
+        .catch(() => {
+          this.$toast.error(
+            "Oops something went wrong, please try again later..."
+          );
         });
     }
-  },
-  mounted() {
-    console.log("TEST", process.env.VUE_APP_TEST);
   }
 };
 </script>

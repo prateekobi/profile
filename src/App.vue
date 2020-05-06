@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view />
+    <Toasts :show-progress="true" :rtl="false" :max-messages="5" :time-out="3000" :closeable="true"></Toasts>
   </div>
 </template>
 
