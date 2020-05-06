@@ -6,7 +6,7 @@
       </div>
       <p class="title text-center">Enquire</p>
       <div class="form text-center">
-        <form v-if="!enquirySent" action="submit" @submit.prevent="sendEmail">
+        <form action="submit" @submit.prevent="sendEmail">
           <div class="form-group">
             <input
               type="text"
@@ -34,12 +34,8 @@
               required
             ></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button :disabled="enquirySent" type="submit">Submit</button>
         </form>
-        <div v-if="enquirySent">
-          <h1 class="jump">Submitted!</h1>
-          <p>I'll get back to you shortly.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -117,16 +113,16 @@ export default {
       font-size: 15px;
       letter-spacing: 2.5px;
       font-weight: 500;
-      color: #000;
-      background-color: #fff;
-      border: none;
+      color: #fff;
+      background-color: #6eb4c7;
+      border: 2px solid #6eb4c7;
       border-radius: 45px;
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease 0s;
       &:hover {
-        background-color: #6eb4c7;
+        background-color: #fff;
         box-shadow: 0px 15px 20px rgba(110, 180, 199, 0.4);
-        color: #fff;
+        color: #6eb4c7;
         cursor: pointer;
         transform: translateY(-7px);
       }
